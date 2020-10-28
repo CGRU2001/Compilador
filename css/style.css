@@ -1,0 +1,40 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: #5FDD9B;
+    flex-direction: column;
+    color: white;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    align-items:center;
+    justify-content: center;
+}
+form input{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 100px;
+    padding: 4px;
+    border: 2.5px solid white;
+    background: transparent;
+    color: white;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+form input:hover{
+    background: white;
+    color: black;
+}
+form textarea{
+    resize: none;
+    width: 150px;
+    height: 80px;
+    padding: 4px;
+    border: 2.5px solid white;
+    background: rgba(255,255,255,0.5);
+    color: black;
+}
