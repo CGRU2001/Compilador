@@ -3,7 +3,7 @@
 
     function checkline($may){
         for ($i=0; $i < count($may); $i++) { 
-            $line = ($i + 1);
+
             if(!(checkVal($may[$i]))){
                 return false;
             }
@@ -15,15 +15,19 @@
     function checkVal($x){
         $txt = array('A', 'TR', 'TL', 'DEAC', 'PRINT');
         $vals = explode(' ',$x);
+        print_r($vals);
         $test = false;
         
-        for ($i=0; $i < count($vals); $i++) { 
+
             for ($j=0; $j < count($txt); $j++) { 
-                if($vals[$i] == $txt[$j]){
+                if($txt[$j] == $vals[0]){
+                    return true;
+                }else if(@$vals[1] == '='){
                     return true;
                 }
+
             }
-        }
+        
         
         return false;
     }
