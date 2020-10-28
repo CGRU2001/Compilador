@@ -3,7 +3,8 @@
 
     function checkline($may){
         for ($i=0; $i < count($may); $i++) { 
-            if(!(checkVal($i))){
+            $line = ($i + 1);
+            if(!(checkVal($may[$i]))){
                 return false;
             }
             
@@ -13,12 +14,17 @@
 
     function checkVal($x){
         $txt = array('A', 'TR', 'TL', 'DEAC', 'PRINT');
-        for ($i=0; $i < count($txt); $i++) { 
-            if($txt[$i] == $x){
-                return true;
+        $vals = explode(' ',$x);
+        $test = false;
+        
+        for ($i=0; $i < count($vals); $i++) { 
+            for ($j=0; $j < count($txt); $j++) { 
+                if($vals[$i] == $txt[$j]){
+                    return true;
+                }
             }
         }
-        $line = $x;
+        
         return false;
     }
 
@@ -31,6 +37,7 @@
     <title>Compilador</title>
 </head>
 <body>
+    <h1>Aprende a programar con demeter</h1>
     <form method="post" action="index.php">
         <label for="code">Inserta el código fuente aquí</label>
         <textarea id="code" name="sourcecode"><?php if(isset($_POST['sourcecode'])){echo $_POST['sourcecode'];} ?></textarea>
