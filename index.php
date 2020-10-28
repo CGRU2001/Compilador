@@ -6,6 +6,10 @@
     <title>Compilador</title>
 </head>
 <body>
-    
+    <form method="post" action="index.php">
+        <label for="code">Inserta el código fuente aquí</label>
+        <textarea id="code" name="sourcecode"></textarea>
+        <input type="submit" name="send" value="comprobar"/>
+    </form>
 </body>
 </html>
