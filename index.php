@@ -59,9 +59,9 @@
                 $may = explode(PHP_EOL, $may);
                 print_r($may);
                 if(checkline($may)){
-                    echo 'El código es válido';
+                    echo '<p>El código es válido</p>';
                 }else{
-                    echo 'Error en la línea '.$line;
+                    echo '<p>Error en la línea '.$line.'</p>';
                 }
                 
             }

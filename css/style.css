@@ -1,10 +1,11 @@
+
 body{
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     display: flex;
     align-items:center;
     justify-content: center;
-    background: #5FDD9B;
+    background: #2bd046;
     flex-direction: column;
     color: white;
 }
@@ -22,7 +23,7 @@ form input{
     border: 2.5px solid white;
     background: transparent;
     color: white;
-    margin: 1rem;
+    margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
 form input:hover{
@@ -31,10 +32,16 @@ form input:hover{
 }
 form textarea{
     resize: none;
-    width: 150px;
-    height: 80px;
+    width: 400px;
+    height: 200px;
     padding: 4px;
     border: 2.5px solid white;
+    background: transparent;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 1rem;
+}
+form textarea:focus{
     background: rgba(255,255,255,0.5);
     color: black;
 }
