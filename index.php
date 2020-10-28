@@ -1,3 +1,28 @@
+<?php
+    $line = 0;
+
+    function checkline($may){
+        for ($i=0; $i < count($may); $i++) { 
+            if(!(checkVal($i))){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+
+    function checkVal($x){
+        $txt = array('A', 'TR', 'TL', 'DEAC', 'PRINT');
+        for ($i=0; $i < count($txt); $i++) { 
+            if($txt[$i] == $x){
+                return true;
+            }
+        }
+        $line = $x;
+        return false;
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,6 +45,12 @@
                 $may = strtoupper($_POST['sourcecode']);
                 $may = explode(PHP_EOL, $may);
                 print_r($may);
+                if(checkline($may)){
+                    echo 'El código es válido';
+                }else{
+                    echo 'Error en la línea '.$line;
+                }
+                
             }
         }
 
