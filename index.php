@@ -6,7 +6,6 @@
             $GLOBALS['line'] = ($i+1);
 
             if(!(checkVal($may[$i]))){
-                
                 return false;
             }
             
@@ -18,18 +17,27 @@
         $txt = array('A', 'TR', 'TL', 'DEAC', 'PRINT');
         $vals = explode(' ',$x);
         print_r($vals);
-        
-
-            for ($j=0; $j < count($txt); $j++) { 
-                if($txt[$j] == $vals[0]){
+        for ($i=0; $i < count($vals); $i++) { 
+                if($vals[0]==$txt[$i] && @$vals[1] == '='){
+                    return false;
+                }
+                if('A' == $vals[$i] && count($vals) == 1){
                     return true;
-                }else if(@$vals[1] == '='){
+                }
+                if('TR' == $vals[$i] && count($vals) == 1){
+                    return true;
+                }if('TL' == $vals[$i] && count($vals) == 1){
+                    return true;
+                }if('DEAC' == $vals[$i] && count($vals) == 1){
+                    return true;
+                }if('PRINT' == $vals[$i] && count($vals) == 2){
+                    return true;
+                }if(@$vals[1] == '='){
                     return true;
                 }
 
-            }
-        
-        
+            
+        }
         return false;
     }
 
@@ -58,7 +66,6 @@
             }else{
                 $may = strtoupper($_POST['sourcecode']);
                 $may = explode(PHP_EOL, $may);
-                print_r($may);
                 if(checkline($may)){
                     echo '<p>El código es válido</p>';
                 }else{
