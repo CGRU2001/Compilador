@@ -3,8 +3,10 @@
 
     function checkline($may){
         for ($i=0; $i < count($may); $i++) { 
+            $GLOBALS['line'] = ($i+1);
 
             if(!(checkVal($may[$i]))){
+                
                 return false;
             }
             
@@ -16,7 +18,6 @@
         $txt = array('A', 'TR', 'TL', 'DEAC', 'PRINT');
         $vals = explode(' ',$x);
         print_r($vals);
-        $test = false;
         
 
             for ($j=0; $j < count($txt); $j++) { 
